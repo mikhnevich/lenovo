@@ -1,0 +1,157 @@
+<!-- code is based on
+https://www.reddit.com/r/thinkpad/comments/8kv76z/lenovo_outlet_deals_site/
+https://www.reddit.com/r/thinkpad/comments/9u4ge1/lenovo_outlet_deals_site/
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Lenovo Outlet</title>
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.css" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/responsive/2.2.1/css/responsive.bootstrap4.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet" type="text/css">
+
+    <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/971D3286-C191-A943-8370-4D55E62E184A/main.js" charset="UTF-8"></script><style type="text/css">
+        body {
+            font-family: 'Fira Sans', sans-serif;
+            font-size: 90%;
+        }
+
+        .btn {
+            margin-top: 4px !important;
+        }
+    </style>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-46676663-7"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'UA-46676663-7');
+    </script>
+
+</head>
+
+<body>
+
+
+<div class="container-fluid" style="max-width: 90%">
+
+    <br>
+
+    <div class="page-header">
+        <h2><i class="fa fa-laptop" aria-hidden="true"></i> Lenovo Watch</h2>
+		<div id="timestampDiv"><h2></h2></div><div id="countDiv"><h2></h2></div>
+    </div>
+
+    <hr>
+
+    <div class="btn-toolbar">
+
+        <div id="condition-filter" class="mb-2 mr-4">
+            <button type="button" class="btn btn-outline-primary btn-sm active">All</button>
+            <button type="button" class="btn btn-outline-primary btn-sm">New</button>
+            <button type="button" class="btn btn-outline-primary btn-sm">Refurbished</button>
+            <button type="button" class="btn btn-outline-primary btn-sm">Scratch And Dent</button>
+        </div>
+
+        <div id="model-filter" class="mb-2 mr-4">
+            <button type="button" class="btn btn-outline-primary btn-sm active">All</button>
+            <button type="button" class="btn btn-outline-primary btn-sm">Chromebook</button>
+            <button type="button" class="btn btn-outline-primary btn-sm">ThinkPad X</button>
+            <button type="button" class="btn btn-outline-primary btn-sm">ThinkPad T</button>
+            <button type="button" class="btn btn-outline-primary btn-sm">ThinkPad P</button>
+            <button type="button" class="btn btn-outline-primary btn-sm">ThinkPad E</button>
+            <button type="button" class="btn btn-outline-primary btn-sm">ThinkPad L</button>
+            <button type="button" class="btn btn-outline-primary btn-sm">Yoga</button>
+            <button type="button" class="btn btn-outline-primary btn-sm">Ideapad</button>
+        </div>
+		<div id="display-filter" class="mb-2 mr-4">
+			<button type="button" class="btn btn-outline-primary btn-sm active">All</button>
+			<button type="button" class="btn btn-outline-primary btn-sm ">HDR</button>
+			<button type="button" class="btn btn-outline-primary btn-sm ">4K</button>
+			<button type="button" class="btn btn-outline-primary btn-sm ">WQHD</button>
+			<button type="button" class="btn btn-outline-primary btn-sm ">1920x1080</button>
+			<button type="button" class="btn btn-outline-primary btn-sm ">1366x768</button>
+		</div>
+        <div id="processor-filter" class="mb-2 mr-4">
+            <button type="button" class="btn btn-outline-primary btn-sm active">All</button>
+            <button type="button" class="btn btn-outline-primary btn-sm">Celeron</button>
+            <button type="button" class="btn btn-outline-primary btn-sm">i3</button>
+            <button type="button" class="btn btn-outline-primary btn-sm">i5</button>
+            <button type="button" class="btn btn-outline-primary btn-sm">i7</button>
+        </div>
+
+        <div id="memory-filter" class="mb-2 mr-4">
+            <button type="button" class="btn btn-outline-primary btn-sm active">All</button>
+            <button type="button" class="btn btn-outline-primary btn-sm">4GB</button>
+            <button type="button" class="btn btn-outline-primary btn-sm">8GB</button>
+            <button type="button" class="btn btn-outline-primary btn-sm">16GB</button>
+            <button type="button" class="btn btn-outline-primary btn-sm">32GB</button>
+            <button type="button" class="btn btn-outline-primary btn-sm">64GB</button>
+        </div>
+
+        <div id="drive-filter" class="mb-2 mr-4">
+            <button type="button" class="btn btn-outline-primary btn-sm active">All</button>
+            <button type="button" class="btn btn-outline-primary btn-sm">eMMC</button>
+            <button type="button" class="btn btn-outline-primary btn-sm">Hard Drive</button>
+            <button type="button" class="btn btn-outline-primary btn-sm">128GB</button>
+            <button type="button" class="btn btn-outline-primary btn-sm">256GB</button>
+            <button type="button" class="btn btn-outline-primary btn-sm">512GB</button>
+            <button type="button" class="btn btn-outline-primary btn-sm">1TB</button>
+        </div>
+
+    </div>
+
+    <hr>
+
+    <table id="resultsTable" class="table" cellspacing="0" width="100%">
+
+        <thead>
+        <tr>
+            <th>Model</th>
+            <th>Condition</th>
+            <th>Price</th>
+            <th>Discount</th>
+            <th>Availability</th>
+            <th>Processor</th>
+            <th>Memory</th>
+            <th>Display</th>
+            <th>Storage</th>
+            <th>WLAN</th>
+            <th>Order</th>
+        </tr>
+        </thead>
+    </table>
+
+    <br>
+    <hr>
+
+</div><!-- /.container -->
+
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.js"></script>
+
+<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.js"></script>
+<script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.2.1/js/dataTables.responsive.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.2.1/js/responsive.bootstrap4.js"></script>
+
+<script src="js/watch.js"></script>
+
+</body>
+</html>
